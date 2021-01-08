@@ -1,11 +1,11 @@
 /* ***** Custom Properties ***** */
 :root {
-    --first-color: #d90062;
-    --first-alpha-color: rgba(217, 0, 98, 0.75);
-    --second-color: #14192d;
-    --second-alpha-color: rgba(20, 25, 45, 0.75);
-    --third-color: #501464;
-    --third-alpha-color: rgba(80, 20, 100, 0.75);
+    --first-color: #331832;
+    --first-alpha-color: rgba(51, 24, 50, 0.75);
+    --second-color: #694d75;
+    --second-alpha-color: rgba(105, 77, 117, 0.75);
+    --third-color: #1b5299;
+    --third-alpha-color: rgba(27, 82, 153, 0.75);
     --white-color: #fff;
     --gray-light-color: #f3f3f3;
     --gray-color: #ccc;
@@ -90,11 +90,19 @@ img {
 
 /* ***** About ***** */
 
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
 .about-skills {
     margin-top: 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+.contact-card svg {
+    fill: var(--first-color);
 }
 
 .contact-form {
@@ -183,18 +191,30 @@ img {
 }
 
 .skill-item {
-    color: var(--first-color);
+    /* color: var(--first-color);
     border-radius: 0.8rem;
     font-size: 5rem;
     padding: 1.5rem;
     transition: all 0.3s;
     min-width: 120px;
+    text-align: center; */
+    color: var(--first-color);
+    border-radius: 0.8rem;
+    font-size: 8rem;
+    padding: 1.5rem;
+    min-width: 240px;
     text-align: center;
+
+    transition: all 0.5s;
+}
+
+.skill-item:hover {
+    color: var(--first-alpha-color);
 }
 
 .skill-name {
     color: var(--black-color);
-    font-size: 1.6rem;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -560,6 +580,11 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+    .about-skills {
+        grid-template-columns: repeat(2, 45%);
+        justify-content: space-between;
+    }
+
     .contact-cards {
         display: grid;
         grid-template-columns: repeat(2, 48%);
@@ -595,6 +620,15 @@ img {
     .services .section-title {
         grid-column: span 2;
     }
+
+    .skill-item {
+        font-size: 6rem;
+        min-width: 180px;
+    }
+
+    .skill-name {
+        font-size: 1.75rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -603,6 +637,11 @@ img {
         grid-template-columns: repeat(3, 30%);
         justify-content: space-between;
         align-content: center;
+    }
+
+    .about-skills {
+        grid-template-columns: repeat(3, 30%);
+        justify-content: space-between;
     }
 
     .contact-cards {
@@ -634,5 +673,14 @@ img {
 
     .services .section-title {
         grid-column: span 3;
+    }
+
+    .skill-item {
+        font-size: 5rem;
+        min-width: 120px;
+    }
+
+    .skill-name {
+        font-size: 1.5rem;
     }
 }
